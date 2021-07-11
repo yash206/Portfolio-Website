@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in Page</title>
+    <link rel="stylesheet" href="signstyle.css">
+</head>
+
+<body style="background: linear-gradient(rgb(13, 13, 112),rgb(125, 35, 209));width:1420px;height: 675px;">
+    <form id="form" action="PersonalPortfolio.html">
+        <div class="container">
+            <h1 style="text-align: center;">Sign In Form</h1>
+            <hr>
+
+            <div class="form-control">
+                <label for="Email">Email</label>
+                <input type="email" placeholder="Enter Email" id="email" name="Email" />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+            <div class="form-control">
+                <label for="username">Password</label>
+                <input type="password" placeholder="Enter Password" id="password" name="Password" />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+            <div class="form-control">
+                <label for="username">Confirm Password</label>
+                <input type="password" placeholder="Confirm Password" id="password2" name="2Password" />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+            <label>
+                <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+              </label><br>
+
+            <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p><br>
+
+            <div>
+                <a href="signin.html"><button type="button" style="float: right;background-color: red">Reset</button></a>
+                <button type="submit" class="sign in" style="background-color:rgb(63, 209, 63);">Sign In</button>
+                <a>
+            </div>
+        </div>
+    </form>
+    <script>
+        const form = document.getElementById('form');
+        const email = document.getElementById('email');
+        const password = document.getElementById('password');
+        const password2 = document.getElementById('password2');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            checkInputs();
+        });
+
+        function checkInputs() {
+            const emailValue = email.value.trim();
+            const passwordValue = password.value.trim();
+            const password2Value = password2.value.trim();
+
+            if (emailValue === '') {
+                setErrorFor(email, 'Email cannot be blank');
+            } else {
+                setSuccessFor(email);
+
+            }
+            if (passwordValue === '') {
+                setErrorFor(password, 'Password cannot be blank');
+            } else {
+                setSuccessFor(password);
+            }
+
+            if (password2Value === '') {
+                setErrorFor(password2, 'Confirm Password cannot be blank');
+            } else if (passwordValue !== password2Value) {
+                setErrorFor(password2, 'Confirm Password do not match');
+            } else {
+                setSuccessFor(password2);
+                window.location = 'PersonalPortfolio.html';
+            }
+        };
+
+        function setErrorFor(input, message) {
+            const formControl = input.parentElement;
+            const small = formControl.querySelector('small');
+            formControl.className = 'form-control error';
+            small.innerText = message;
+        }
+
+        function setSuccessFor(input) {
+            const formControl = input.parentElement;
+            formControl.className = 'form-control success';
+        }
+
+        function isEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        };
+    </script>
+
+</body>
+
+</html>

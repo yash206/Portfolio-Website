@@ -1,0 +1,106 @@
+#bg1 {
+    background: url('https://wallpaperaccess.com/full/210901.jpg');
+    background-repeat: no-repeat;
+}
+
+#navbar {
+    overflow: hidden;
+    height: 100px;
+    background-color: transparent;
+}
+
+#navbar a {
+    float: right;
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    margin-top: 40px;
+}
+
+#navbar a:hover {
+    color: red
+}
+
+.content {
+    padding: 16px;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.sticky+.content {
+    padding-top: 60px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding: 0px 6rem;
+    color: white;
+}
+
+.txt-type>.txt {
+    border-right: 0.2rem solid #777;
+}
+
+.container-flexbox {
+    display: flex;
+}
+
+.flexbox-item {
+    width: 1000px;
+    margin: 60px;
+}
+
+li {
+    padding: 3px;
+}
+
+#Read {
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: black;
+    cursor: pointer;
+    color: white;
+    font-size: 20px;
+}
+
+#Read:hover {
+    background-color: white;
+    color: rgb(223, 69, 69);
+}
+
+td,
+th {
+    text-align: left;
+}
+
+.footer {
+    left: 0;
+    bottom: 50px;
+    width: 100%;
+    background-color: black;
+    height: 60px;
+    text-align: center;
+}
+
+.fab {
+    width: 25px;
+    padding: 10px;
+    font-size: 30px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    color: orange;
+    border-radius: 50%;
+}
