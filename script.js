@@ -4,4 +4,3 @@ document.addEventListener('DOMContentLoaded', function() {
       element.classList.add('show');
     });
   });
-console.log("Hello")
