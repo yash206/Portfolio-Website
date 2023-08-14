@@ -4,3 +4,29 @@ document.addEventListener('DOMContentLoaded', function() {
       element.classList.add('show');
     });
   });
+  
+  function sendMail() {
+    var params = {
+      name: document.getElementById("floatingInput").value,
+      email: document.getElementById("floatingEmail").value,
+      phone: document.getElementById("floatingPhone").value,
+      message: document.getElementById("floatingMessage").value,
+    };
+  
+    const serviceID = "service_phthskf";
+    const templateID = "template_6uk9ijc";
+  
+      emailjs.send(serviceID, templateID, params)
+      .then(res=>{
+          document.getElementById("floatingInput").value = "";
+          document.getElementById("floatingEmail").value = "";
+          document.getElementById("floatingPhone").value = "";
+          document.getElementById("floatingMessage").value = "";
+          console.log(res);
+          alert("Your message sent successfully!!")
+  
+      })
+      .catch(err=>console.log(err));
+  
+  }
+  
