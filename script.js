@@ -12,10 +12,10 @@ document.addEventListener('DOMContentLoaded', function() {
       phone: document.getElementById("floatingPhone").value,
       message: document.getElementById("floatingMessage").value,
     };
-  
+    
     const serviceID = "service_phthskf";
     const templateID = "template_6uk9ijc";
-  
+    if(params.name != "" && params.email != "" && params.message != ""){
       emailjs.send(serviceID, templateID, params)
       .then(res=>{
           document.getElementById("floatingInput").value = "";
@@ -27,6 +27,6 @@ document.addEventListener('DOMContentLoaded', function() {
   
       })
       .catch(err=>console.log(err));
-  
+    }
   }
   
